@@ -118,7 +118,7 @@ useEffect(() => {
 }, []);
 ```
 
-1. ### Steps to Use Proxy to Make a Connection
+2. ## Steps to Use Proxy to Make a Connection
 
 #### `vite.config.js`
 
@@ -152,7 +152,7 @@ useEffect(() => {
   });
 }, []);
 ```
-### Whitelisting frontend Configuring CORS in Express.js
+3. ## Whitelisting frontend Configuring CORS in Express.js
 
 This code configures CORS (Cross-Origin Resource Sharing) settings for an Express.js application. CORS is a mechanism that allows servers to specify which domains are permitted to make requests to them. Let's break down the code:
 
