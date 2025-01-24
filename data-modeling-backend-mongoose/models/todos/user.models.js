@@ -17,13 +17,14 @@ const userSchema = new mongoose.Schema({
         // lowercase: true,
         unique: true
     },
-    noOfcompletedTasks: {
+    noOfcompletedTodos: {
         required: true,
         type: Number,
         default: 0,
     },
     todos: {
         type: mongoose.Schema.Types.ObjectId,
+        ref: 'Todo',
         required: true,
     },
     totalTodos: {
