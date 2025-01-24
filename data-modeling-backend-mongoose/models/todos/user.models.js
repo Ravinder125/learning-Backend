@@ -2,7 +2,7 @@ import mongoose, { Mongoose, Schema } from "mongoose";
 
 
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
     userName: {
         type: String,
         required: true,
@@ -23,7 +23,7 @@ const userSchema = new Schema({
         default: 0,
     },
     todos: {
-        type: [],
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
     },
     totalTodos: {
@@ -31,6 +31,7 @@ const userSchema = new Schema({
         required: true,
         default: 0
     }
+    
 },
 {
     timestamps: true
