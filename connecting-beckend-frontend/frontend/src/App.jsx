@@ -18,7 +18,7 @@ function App() {
    }, [])
   return (
     <>
-      <h1>Chai and full stack</h1>
+      <h1>I am in git</h1>
       <p>JOKES: { jokes.length }</p>
 
       {
