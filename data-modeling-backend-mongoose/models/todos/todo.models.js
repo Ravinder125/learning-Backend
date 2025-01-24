@@ -1,15 +1,20 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose, { mongoose } from "mongoose";
 
 
 
 const todoSchema = new mongoose.Schema({
-    titel: {
+    title: {
         type: String,
         required: true,
         unique: [true, 'title must be different from other todo title'],
         min: [2, 'title must be longer than 2 characters'],
         max: [10, 'title must be equal or shorter than 10']
 
+    },
+    TotalCompletedSubTodo: {
+        type: Number,
+        default: 0,
+        required: true
     },
     subToDos: {
         type: [],
