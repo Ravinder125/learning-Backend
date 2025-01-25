@@ -7,8 +7,8 @@ const todoSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: [true, 'title must be different from other todo title'],
-        min: [2, 'title must be longer than 2 characters'],
-        max: [10, 'title must be equal or shorter than 10']
+        min: [2, 'title must be equal or  longer than 2 characters'],
+        max: [10, 'title must be equal or shorter than 10 characters']
 
     },
     TotalCompletedSubTodo: {
@@ -17,19 +17,22 @@ const todoSchema = new mongoose.Schema({
         required: true
     },
     subToDos: {
-        type: [],
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'SubToDos',
         required: true,
     },
     isCompleted: {
         type: Boolean,
         default: false,
         required: true
-    },
-    createdBy: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    }
-},{
+    }, 
+    createdBy: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ]
+}, {
     timestamps: true
 })
 
